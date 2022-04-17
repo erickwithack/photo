@@ -1,0 +1,55 @@
+{% for post in posts %}
+
+<div class="posts">
+  <div class="post-title">
+    <div class="post-left">
+      <div class="details">
+        <p class="name">{{post['user']['username']}}</p>
+      </div>
+    </div>
+    <div class="post-right">
+      <i class="fas fa-ellipsis-h"></i>
+    </div>
+  </div>
+  <div class="post-content">
+    <img src="{{post['image_url']}}" alt="image by {{post['user']['username']}}
+    width="600" height="600" />
+  </div>
+  <div class="post-footer">
+    <div class="like-share-comment">
+      <i class="far fa-heart"> </i>
+      <i class="far fa-comment"></i>
+      <i class="far fa-paper-plane"></i>
+    </div>
+    <div class="save">
+      <i class="far fa-bookmark"></i>
+    </div>
+  </div>
+  <div class="post-footer-content">
+    <p class="likes"><bold>{{ post['likes']}} likes</bold></p>
+
+    {% if post['comments'] | length > 1 %}
+    <p class="name">
+      {{ post['comments'][0].user.username }}
+      <span>{{post['comments'][0].text}}</span>
+    </p>
+    <p style="color: blue">View all {{ post['comments'] | length }} comments</p>
+    <p class="name">
+      {{ post['comments'][1].user.username }}<span
+        >{{post['comments'][1].text}}</span
+      >
+    </p>
+    {% endif %}
+  </div>
+  <div class="add-comment">
+    <div class="left-side">
+      <i class="fa-regular fa-face-smile"></i>
+      <input type="text" placeholder="Add a comment...." />
+    </div>
+    <div class="right-side">
+      <p>Post</p>
+    </div>
+  </div>
+</div>
+
+{% endfor %}

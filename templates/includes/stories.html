@@ -1,0 +1,43 @@
+<div class="story">
+  {% for story in stories %}
+  <div class="stories">
+    <a href="#"
+      ><img
+        src="{{story.user.image_url}}"
+        alt="story image from {{story.user.username}}"
+        width="60"
+        height="60 "
+        alt=""
+    /></a>
+    <p>{{ story.user.username}}</p>
+  </div>
+  {% endfor %}
+  <!-- <div class="stories">
+    <a href="#"
+      ><img src="../static/img/elden ring.jpeg" width="60" height="60 " alt=""
+    /></a>
+    <p>eldenRing</p>
+  </div> -->
+  <!-- <div class="stories">
+    <a href="#"
+      ><img src="../static/img/chicago.jpg" width="60" height="60 " alt=""
+    /></a>
+    <p>tarnishedMaiden</p>
+  </div> -->
+  <!-- <div class="stories">
+    <a href="#"
+      ><img
+        src="../static/img/robot-chicken.jpeg"
+        width="60"
+        height="60 "
+        alt=""
+    /></a>
+    <p>radagon</p>
+  </div> -->
+  <!-- <div class="stories">
+    <a href="#"
+      ><img src="../static/img/coffice.jpg" width="60" height="60 " alt=""
+    /></a>
+    <p>whemsical</p>
+  </div> -->
+</div>

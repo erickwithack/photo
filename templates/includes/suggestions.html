@@ -1,0 +1,39 @@
+<div class="right-side">
+  <div class="profile-title">
+    <div class="profile-left">
+      <div class="image">
+        <img src="{{user.profile_url}}" alt="" width="56" height="56" />
+      </div>
+      <div class="details">
+        <p class="name">{{user.username}}</p>
+      </div>
+    </div>
+    <div class="profile-right">
+      <p>Switch</p>
+    </div>
+  </div>
+  <div class="suggestions">
+    <p>Suggestions for you</p>
+    <p>See All</p>
+  </div>
+
+  {% for sugg in suggestions %}
+  <div class="suggestions-title">
+    <div class="suggestions-left">
+      <div class="image">
+        <img
+          src="{{sugg.profile_url}}"
+          alt="suggestion image"
+          height="32"
+          width="32"
+        />
+      </div>
+      <div class="details">
+        <p class="name">{{sugg.username}}</p>
+        <span><small>suggested for you</small></span>
+      </div>
+    </div>
+    <div class="suggestions-right" style="color: blue">follow</div>
+  </div>
+  {% endfor %}
+</div>
